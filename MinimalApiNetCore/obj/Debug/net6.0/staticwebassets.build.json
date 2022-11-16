@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "TTQEbDUcV0cPpKik1h9kKixLo2kmrue6NYvaiSe7wLQ=",
+  "Source": "MinimalApiNetCore",
+  "BasePath": "_content/MinimalApiNetCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
