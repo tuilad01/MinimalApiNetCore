@@ -8,7 +8,7 @@ namespace Services.Todo
 {
     public interface ITodoService
     {
-        IEnumerable<Todo> GetAll();
+        Task<IEnumerable<Todo>> GetAll();
         Task<Todo?> Get(int id);
         Task<Todo?> Add(Todo newTodo);
         Task<Todo?> Update(int id, Todo newTodo);

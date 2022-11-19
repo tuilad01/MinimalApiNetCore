@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Services.Dictionary;
 using Services.Todo;
 
 namespace MinimalApiNetCore.Database
@@ -10,10 +11,12 @@ namespace MinimalApiNetCore.Database
         }
 
         public DbSet<Todo> Todos { get; set; }
+        public DbSet<Dictionary> Dicitionaries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Todo>().ToTable("Todo");
+            modelBuilder.Entity<Dictionary>().ToTable("Dictionary");
         }
 
     }

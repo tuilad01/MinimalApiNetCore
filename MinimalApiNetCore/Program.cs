@@ -5,16 +5,18 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MinimalApiNetCore.Api;
 using MinimalApiNetCore.Database;
+using Services.Dictionary;
 using Services.Todo;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ITodoService, TodoService>();
+builder.Services.AddScoped<IDictionaryService, DictionaryService>();
 
 builder.Services.AddDbContext<MyDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerExpress"));
 });
 //builder.Services.AddCors("AllowAll", options =>
 //{   
@@ -45,7 +47,8 @@ app.MapGet("/", () => "Hello World!");
 
 // todo
 app.MapTodoEndpoints();
-
+//dictionary
+app.MapDictionaryEndpoints();
 
 
 app.Run();

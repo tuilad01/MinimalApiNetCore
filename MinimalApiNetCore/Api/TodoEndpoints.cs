@@ -12,10 +12,10 @@ namespace MinimalApiNetCore.Api
                 var todos = todoService.GetAll();
                 return Results.Ok(todos);
             });
-            app.MapGet("/todo/{id}", (int id, ITodoService todoService) =>
+            app.MapGet("/todo/{id}", async (int id, ITodoService todoService) =>
             {
 
-                var todo = todoService.Get(id);
+                var todo = await todoService.Get(id);
                 if (todo != null)
                 {
                     return Results.Ok(todo);

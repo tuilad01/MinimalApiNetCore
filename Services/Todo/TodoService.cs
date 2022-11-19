@@ -10,10 +10,10 @@ namespace Services.Todo
             _db = db;
         }
 
-        public IEnumerable<Todo> GetAll()
+        public Task<IEnumerable<Todo>> GetAll()
         {
             var todos = _db.Todos.ToList();
-            return todos;
+            return Task.FromResult<IEnumerable<Todo>>(todos);
         }
 
         public async Task<Todo?> Get(int id)
