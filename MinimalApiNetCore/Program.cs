@@ -11,6 +11,16 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+    });
+});
+
 builder.Services.AddScoped<ITodoService, TodoService>();
 builder.Services.AddScoped<IDictionaryService, DictionaryService>();
 
@@ -40,6 +50,8 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseCors("AllowAll");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -49,6 +61,12 @@ app.MapGet("/", () => "Hello World!");
 app.MapTodoEndpoints();
 //dictionary
 app.MapDictionaryEndpoints();
+
+
+app.MapGet("/dictionary/test", () =>
+{
+    return "hello test";
+});
 
 
 app.Run();

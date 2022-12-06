@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Visual Studio 2022\MinimalApiNetCore\MinimalApiNetCore\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-12-06T14:41:15.3432329Z;True|2022-12-06T21:40:07.1404821+07:00;True|2022-12-05T21:59:31.0362238+07:00;True|2022-11-20T14:18:59.7257126+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
